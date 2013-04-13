@@ -1,0 +1,22 @@
+<div align="top">
+<p><b>Welcome: {{ request.user.userprofile.first_name|upper }} {{ request.user.userprofile.last_name|upper }}</b> &nbsp;&nbsp;&nbsp;&nbsp; <a href={% url  "logout" %}>Logout</a></p>
+<p><a href="/upload/{{album_name}}"><font size="2" color="blue">UploadPhoto </a></p>
+</div>
+<div>
+<div align="center">
+        {% for img,cap in photos %}
+           <p>{{ cap }}</p>
+           <img src="{{ MEDIA_URL }}{{request.user.userprofile.username}}/{{album_name}}/{{ img }}" width="160px" height="130px" />
+        {% endfor %}
+</div>
+<!-- <div align="center">
+  <tr>
+       <form action="" method="post">
+       {{ comment }}
+       <p>Your's comment:</p>
+       <textarea name="txt" rows="10" cols="50"></textarea>
+       <p><input type="submit" value="Comment" /></p>
+      </form>
+   </tr>
+  </div>
+</div> -->

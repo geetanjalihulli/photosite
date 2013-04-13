@@ -1,0 +1,21 @@
+{% if error %}
+ 
+{{ error }}
+ 
+{% endif %}
+
+<form action="" enctype="multipart/form-data" method="post">
+<p>Choose image : {{ form.image }}</p>
+<p>Write Caption: {{ form.caption }}</p>
+    {% if album_list %}
+    <select name="album">
+        <option value="default">Select Album</option>
+        {% for album in album_list %}
+            <option value="{{album}}">{{album}}</option>
+        {% endfor %}    
+    </select>
+    {% endif %}
+<input type="submit" value="Save" />
+</form>
+
+<a href={% url  "logout" %}>Logout</a>

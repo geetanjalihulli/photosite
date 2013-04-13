@@ -1,0 +1,27 @@
+<div align="top">
+<p><b>Welcome: {{ request.user.userprofile.first_name|upper }} {{ request.user.userprofile.last_name|upper }}</b> &nbsp;&nbsp;&nbsp;&nbsp; <a href={% url  "logout" %}>Logout</a></p>
+<p><a href="/upload/"><font size="2" color="blue">UploadPhoto </a></p>
+<p><a href="/new_album/"><font size="2" color="blue">NewAlbum </a></p>
+</div>
+<div>
+<div align="center">
+<table border="1px">
+           <tr align="center">
+        {% for album_name,desc in photos %}
+          <td><a href="/album/{{album_name}}">{{ album_name }}</a>
+           <p>{{ desc }}&nbsp;&nbsp;&nbsp;</p></td>
+        {% endfor %}
+</tr>
+          </table>
+</div>
+<!-- <div align="center">
+  <tr>
+       <form action="" method="post">
+       {{ comment }}
+       <p>Your's comment:</p>
+       <textarea name="txt" rows="10" cols="50"></textarea>
+       <p><input type="submit" value="Comment" /></p>
+      </form>
+   </tr>
+  </div>
+</div> -->

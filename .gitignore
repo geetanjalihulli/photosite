@@ -18,6 +18,7 @@
 bin
 lib
 include
+local
 bootstrap.py
 develop-eggs
 .installed.cfg
